@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BookLvr
+{% endblock %}
+
+{% block body %}
+    <h1>Input username and password</h1>
+
+    <form action="{{ url_for('registration') }}" method="post">
+        <input type="text" name="username" placeholder="Enter Username Here">
+        <input type="password" name="password" placeholder="Enter Password Here">
+        <button>Register!</button>
+    </form>
+
+{% endblock %}

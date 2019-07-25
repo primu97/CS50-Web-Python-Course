@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BookLvr
+{% endblock %}
+
+{% block body %}
+    <h1>Search</h1>
+
+    <form action="{{ url_for('search') }}" method="post">
+        <input type="text" name="word" placeholder="Search Here">
+        <button>Search!</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+body {
+  background-image: url("books.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+h1{
+  font-family:inherit;
+  text-align: center;
+}

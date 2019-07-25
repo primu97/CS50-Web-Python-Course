@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BookLvr
+{% endblock %}
+
+{% block body %}
+    <h1>{{book.title}}</h1>
+    <h2>{{book.author}}</h2>
+    <h3>ISBN: {{book.isbn}}</h3>
+    <h3>Published: {{book.year}}</h3>
+    <h4>Average rating according to Goodreads: {{rating}}</h4>
+    <h4>Count of ratings on Goodreads: {{count}}</h4>
+    <h2>Write a review: </h2>
+        {% for review in reviews %}
+
+                  <p>  {{ review.review }}
+                    from {{ review.username }}
+                    gave it {{review.rating}} star
+                  </p>
+        {% endfor %}
+
+
+    <form action="{{ url_for('book', book_id = book.id) }}" method="post">
+        <input type="text" name="review" placeholder="Enter Review Here">
+        <input type="number" name="rating" placeholder="Enter Rating here">
+        <button>Add Review</button>
+    </form>
+
+{% endblock %}
